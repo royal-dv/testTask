@@ -1,0 +1,58 @@
+.contentCard {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  background-color: $background-color;
+  cursor: pointer;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  @include desktop {
+    gap: 10px;
+  }
+
+  @include laptop {
+    padding: 12px;
+  }
+
+  @include mobile {
+    padding: 10px;
+  }
+
+  img {
+    object-fit: cover;
+  }
+
+  &Info {
+    display: flex;
+    flex-direction: column;
+
+    &Label {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      color: $white-color;
+
+      @include desktop {
+        font-size: 18px;
+      }
+    }
+
+    &SubLabel {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 150%;
+      color: $label-color;
+
+      @include desktop {
+        font-size: 16px;
+      }
+    }
+  }
+}

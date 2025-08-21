@@ -1,0 +1,27 @@
+.tabs {
+  &Common {
+    border: 1px solid $border-color;
+    border-radius: 8px;
+  }
+
+  &Wrapper {
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &Container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &NoData {
+    color: $label-color;
+    font-size: 16px;
+  }
+
+  &Content {
+    padding: 24px;
+  }
+}

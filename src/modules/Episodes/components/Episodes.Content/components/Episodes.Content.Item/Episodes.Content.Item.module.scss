@@ -1,0 +1,164 @@
+.contentItem {
+  &Wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-top: 40px;
+    border-top: 1px solid $border-color;
+    cursor: pointer;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    @include laptop {
+      gap: 18px;
+      padding-top: 30px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      border-top: none;
+      background-color: $background-color;
+      border-radius: 8px;
+      padding: 20px;
+      align-items: flex-start;
+    }
+  }
+
+  &Episode {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    color: $label-color;
+
+    @include desktop {
+      font-size: 30px;
+    }
+
+    @include mobile {
+      gap: 20px;
+    }
+  }
+
+  &Title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 150%;
+    color: $white-color;
+    flex: 1;
+
+    @include laptop {
+      font-size: 18px;
+    }
+
+    @include mobile {
+      font-size: 16px;
+    }
+
+    @include mobile {
+      gap: 20px;
+    }
+  }
+
+  &Duration {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: $label-color;
+
+    &Wrapper {
+      border: 1px solid $border-color;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 11px 13px;
+      width: max-content;
+
+      @include laptop {
+        padding: 9px 8px;
+      }
+
+      @include mobile {
+        padding: 8px;
+      }
+    }
+
+    @include laptop {
+      font-size: 14px;
+    }
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+
+  &Description {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: $label-color;
+
+    @include laptop {
+      font-size: 16px;
+    }
+  }
+
+  &Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    @include mobile {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+    }
+  }
+
+  &InfoWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 1;
+  }
+
+  &Preview {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @include mobile {
+      flex-direction: row-reverse;
+      gap: 18px;
+    }
+
+    &PlayContainer {
+      position: relative;
+      cursor: pointer;
+    }
+
+    img {
+      border: 1px solid $border-color;
+      border-radius: 12px;
+      object-fit: cover;
+      opacity: 0.5;
+    }
+  }
+
+  &Play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #00000099;
+  }
+}

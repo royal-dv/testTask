@@ -1,0 +1,8 @@
+.table {
+  &Wrapper {
+    border: 1px solid $border-table-color;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+  }
+}

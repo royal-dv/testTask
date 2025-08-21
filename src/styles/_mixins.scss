@@ -1,0 +1,74 @@
+@use "sass:map";
+@use "sass:meta";
+
+$breakpoints: (
+  "mobile": 1439px,
+  "mobile2": 1440px,
+  "laptop": 1919px,
+  "desktop": 1920px,
+) !default;
+
+@mixin min-width($breakpoint) {
+  @if meta.type-of($breakpoint) ==
+    "string" and
+    map.has-key($breakpoints, $breakpoint)
+  {
+    @media (min-width: map.get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  }
+}
+
+@mixin max-width($breakpoint) {
+  @if meta.type-of($breakpoint) ==
+    "string" and
+    map.has-key($breakpoints, $breakpoint)
+  {
+    @media (max-width: #{map.get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $breakpoint) {
+      @content;
+    }
+  }
+}
+
+@mixin between($min, $max) {
+  $min-value: if(
+    meta.type-of($min) == "string" and map.has-key($breakpoints, $min),
+    map.get($breakpoints, $min),
+    $min
+  );
+  $max-value: if(
+    meta.type-of($max) == "string" and map.has-key($breakpoints, $max),
+    map.get($breakpoints, $max),
+    $max
+  );
+
+  @media (min-width: $min-value) and (max-width: $max-value) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @include max-width("mobile") {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @include between("mobile2", "laptop") {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @include min-width("desktop") {
+    @content;
+  }
+}

@@ -1,0 +1,8 @@
+.tableRow {
+  &Wrapper {
+    display: flex;
+    &:not(:last-child) {
+      border-bottom: 1px solid $border-table-color;
+    }
+  }
+}

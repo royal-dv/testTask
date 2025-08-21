@@ -1,0 +1,33 @@
+.episodesInfo {
+  &Wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  &Header {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    @include desktop {
+      gap: 8px;
+    }
+  }
+
+  &Item {
+    &Label {
+      color: $label-color;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+
+      @include laptop {
+        font-size: 16px;
+      }
+
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+  }
+}

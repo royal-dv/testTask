@@ -1,0 +1,15 @@
+.layout {
+  min-height: 100vh;
+  background-color: $background-color;
+  display: flex;
+  flex-direction: column;
+  padding: 150px 160px;
+
+  @include laptop {
+    padding: 120px 80px;
+  }
+
+  @include mobile {
+    padding: 80px 17px;
+  }
+}

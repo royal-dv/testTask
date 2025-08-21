@@ -1,0 +1,46 @@
+.episodes {
+  &info {
+    &Wrapper {
+      padding: 50px;
+      background-color: $background-color-episodes;
+      border-radius: 12px;
+      border: 1px solid $border-color;
+      flex: 1;
+      gap: 30px;
+      display: flex;
+      flex-direction: column;
+
+      @include laptop {
+        gap: 24px;
+        padding: 40px;
+      }
+
+      @include mobile {
+        gap: 20px;
+        padding: 24px;
+      }
+    }
+
+    &Content {
+      &Calendar {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+        color: $white-color;
+
+        @include desktop {
+          font-size: 20px;
+        }
+      }
+      &Array {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+
+        &Rating {
+          gap: 16px;
+        }
+      }
+    }
+  }
+}

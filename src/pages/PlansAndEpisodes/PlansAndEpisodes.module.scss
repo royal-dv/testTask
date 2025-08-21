@@ -1,0 +1,13 @@
+.plansAndEpisodesWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+
+  @include laptop {
+    gap: 120px;
+  }
+
+  @include mobile {
+    gap: 80px;
+  }
+}

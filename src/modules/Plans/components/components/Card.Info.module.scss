@@ -1,0 +1,22 @@
+.cardInfo {
+  &Wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+  }
+
+  &Common {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+  }
+
+  &Label {
+    color: $label-color;
+  }
+
+  &Value {
+    color: #f1f1f3;
+  }
+}

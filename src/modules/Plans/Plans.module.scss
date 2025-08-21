@@ -1,0 +1,56 @@
+.plans {
+  &Wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+
+    @include laptop {
+      gap: 60px;
+    }
+
+    @include mobile {
+      gap: 40px;
+    }
+
+    &Text {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      @include laptop {
+        gap: 15px;
+      }
+      @include mobile {
+        gap: 11px;
+      }
+    }
+  }
+
+  &Title {
+    font-weight: 700;
+    font-size: 48px;
+    color: $white-color;
+    line-height: 150%;
+
+    @include laptop {
+      font-size: 38px;
+    }
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  &Description {
+    font-weight: 400;
+    font-size: 18px;
+    color: $label-color;
+    text-align: justify;
+    line-height: 150%;
+
+    @include laptop {
+      font-size: 16px;
+    }
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+}

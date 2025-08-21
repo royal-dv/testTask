@@ -1,0 +1,127 @@
+.accordion {
+  &Wrapper {
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+  }
+
+  &Button {
+    background-color: $background-color-shared;
+    border-radius: 12px;
+    padding: 24px 50px;
+    width: 100%;
+    border: 1px solid $border-color;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: opacity 0.3s;
+
+    &:focus-visible {
+      outline: 2px solid $white-color;
+      outline-offset: 2px;
+      border-radius: 12px;
+    }
+
+    &IsOpen {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom: 0;
+      padding-bottom: 30px;
+      transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+
+      @include mobile {
+        padding-bottom: 20px;
+      }
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    @include laptop {
+      padding: 20px 40px;
+    }
+
+    @include mobile {
+      padding: 16px 20px;
+    }
+  }
+
+  &TitleWrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @include laptop {
+      gap: 8px;
+    }
+
+    @include mobile {
+      gap: 6px;
+    }
+
+    &Title {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 150%;
+      color: $white-color;
+
+      @include laptop {
+        font-size: 20px;
+      }
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+
+    &SubTitle {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      color: $label-color;
+
+      @include laptop {
+        font-size: 16px;
+      }
+
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &Icon {
+    &Wrapper {
+      background-color: $background-color;
+      border-radius: 50%;
+      border: 1px solid $border-color;
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s;
+
+      &IsOpen {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &Content {
+    background-color: $background-color-shared;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &IsOpen {
+      border-bottom: 1px solid $border-color;
+      max-height: 3000px;
+    }
+  }
+}

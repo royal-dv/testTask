@@ -1,0 +1,25 @@
+.button {
+  &Wrapper {
+    border: none;
+    cursor: pointer;
+    flex: 1;
+    border-radius: 6px;
+    padding: 11.5px 0;
+    line-height: 150%;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &Active {
+    color: #ffffff;
+    background-color: #1f1f1f;
+  }
+
+  &InActive {
+    background-color: transparent;
+    color: $label-color;
+  }
+}
